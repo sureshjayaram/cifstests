@@ -15,8 +15,7 @@ addition of new tests easier.
 Dependencies
 ------------
 These tests depend on posix1e (for ACL tests) and xattr (Extended attribute
-		tests) modules. Without these modules, those tests will be
-skipped.
+tests) modules. Without these modules, those tests will be skipped.
 
 
 Installation
