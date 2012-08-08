@@ -46,6 +46,24 @@ For e.g.
 	$python -m unittest -v test_cifs.OpenTests (or)
 	$python -m unittest -v test_cifs.XattrTests.test_file_posix_acl
 
+
+Adding new tests
+----------------
+You are most welcome to contribute test cases or group of tests. Ideally, it
+would be nice to have a testcase for each regression. To write your own test
+or test class the following PyUnit documentation in the "References" section
+or existing tests might be useful.
+
+
+References
+----------
+
+PyUnit documentation
+
+	http://pyunit.sourceforge.net/pyunit.html
+	http://docs.python.org/library/unittest.html
+
+
 Author
 ------
 Suresh Jayaraman
