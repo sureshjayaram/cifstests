@@ -517,20 +517,17 @@ class TwoWriterTest(unittest.TestCase):
                 child_pid = os.fork()
 
                 if child_pid == 0:
-                        size = os.stat(TESTFILE).st_size
-			self.assertEqual(size, 30, 'Error: child not seeing'
-					 'parent writes')
 			f = open(TESTFILE, 'a')
                         f.write(TESTDATA)
                         f.write(MORE_TESTDATA)
                 	f.close()
 			os._exit(0)
                 else:
-			f = open(TESTFILE, 'a')
-                        f.write(TESTDATA)
-                        f.write(MORE_TESTDATA)
-                	f.close()
-			pid, status = os.waitpid(child_pid, 0)
+			os.waitpid(child_pid, 0)
+                        size = os.stat(TESTFILE).st_size
+			print size
+			self.assertEqual(size, 30, "Error: parent not seeing"
+					 "child's swrites")
 
 		safe_rm(TESTFILE)
 
