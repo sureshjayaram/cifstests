@@ -136,6 +136,8 @@ class OpenTests(unittest.TestCase):
 
 		''' open a file with O_DIRECT '''
 
+		f = open(TESTFILE, 'w')
+		f.close()
 		# XXX: expected to fail even with 'directio' mount option?
 		try:
 			fd = os.open(TESTFILE, os.O_WRONLY|os.O_DIRECT)
@@ -144,6 +146,7 @@ class OpenTests(unittest.TestCase):
 			raise e
 		self.assertNotEqual(fd, -1, 'open with O_DIRECT failed')
 		os.close(fd)
+		safe_rm(TESTFILE)
 
 	def test_excl_creat(self):
 
