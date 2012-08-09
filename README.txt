@@ -31,20 +31,20 @@ How to run the tests
 Currently, there is no provision to mount a CIFS share using this test. So, it
 requires mounting to be done prior to running the tests.
 
-The `test_cifs.py' is the python program that contains all the tests and can
+The `testcifs.py' is the python program that contains all the tests and can
 be run on a cifs mount by:
 
-	$./test_cifs.py
+	$./testcifs.py
 
 Tests can be run selectively by:
 
-	$python -m unittest -v test_cifs.<Classname> (or)
-	$python -m unittest -v test_cifs.<Classname>.<TestCase>
+	$python -m unittest -v testcifs.<Classname> (or)
+	$python -m unittest -v testcifs.<Classname>.<TestCase>
 
 For e.g.
 
-	$python -m unittest -v test_cifs.OpenTests (or)
-	$python -m unittest -v test_cifs.XattrTests.test_file_posix_acl
+	$python -m unittest -v testcifs.OpenTests (or)
+	$python -m unittest -v testcifs.XattrTests.test_file_posix_acl
 
 
 Adding new tests
