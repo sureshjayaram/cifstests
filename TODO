@@ -1,58 +1,9 @@
+TODO
 
-# verify cifs mount
+* be able to mount cifs share with different mount options?
+* make the acl and xattr tests independent of the python modules
+	o may be write C extensions?
+* DFS support tests
+* kerberos
+* more caching tests
 
-# mount test with variety of options, tcp, udp, other tricky problematic
-# mountoptions
-
-# setup tree (files and dirs) for testing
-
-# readdir
-
-# open file -- posix/other
-
-# creat file -- various flags
-
-# read from file
-
-# write to file
-
-# remove file
-
-# remove dir
-
-# getpathinfo/getfileinfo
-
-# access?
-
-# attributes -- getattr/setattr
-
-# rename
-
-# link, symlink
-
-# pipe
-
-# locking
-
-# files with holes
-
-# cifs specific
-
-# DFS
-               echo 2 > 2; rm 1 2; umount
-                subprocess.Popen(["mount", "-t", "cifs", "//server",
-                "mntpoint", "-o", "username=cg", "pass=cg"]) '''
-
-''' open with O_TRUNC on a file with mandlock fails '''
-''' write lot of data to a file setattr the file rd-only reconnect write fails?? '''
-
-       '''The quick test we run is to do:
-
-        mkdir a b c d e f g h i j k l m n o p q r s t u v w x; ls -a ?
-        Either that, or an immediately following:
-        rmdir ?; mkdir a b c d e f g h i j k l m n o p q r s t u v w x; ls -a
-        ?
-        will trigger the issue.  Normally the first one and always the second 
-        one will on all or most directories fail to show them containing '.'
-        and 
-        '..'.  The issue is wider, we're seeing file corruptions and 'ls' 
